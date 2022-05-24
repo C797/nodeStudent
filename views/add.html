@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增</title>
+    <link rel="stylesheet" href="/pubilc/layui/css/layui.css" media="all">
+    <style>
+        body{
+            padding: 20px;
+        }
+        .box{
+            width: 60%;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        h1{
+            margin-left:110px;
+            margin-bottom: 10px;
+        }
+        #addBtn{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>新增</h1>
+        <form action="/student/add" method="POST" class="layui-form" lay-filter='formdata'>
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block">
+                    <input type="text" name='name' lay-verify="name" class="layui-input" placeholder="请输入姓名">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">学号</label>
+                <div class="layui-input-block">
+                    <input type="text" name='num' lay-verify="num" class="layui-input" placeholder="请输入学号">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <select name="sex" lay-verify="sex" aria-placeholder="请选择性别">
+                        <option value=""></option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">爱好</label>
+                <div class="layui-input-block">
+                    <input type="text" name='hobby' lay-verify="hobby" class="layui-input" placeholder="请输入爱好">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <button class="layui-btn layui-btn-normal" id="addBtn">保存</button>
+            </div>
+            
+        </form>
+    </div>
+</body>
+<script src="/pubilc/layui/layui.js"></script>
+<script>
+    layui.use(['form'],function(){
+        var form = layui.form;
+        form.render();
+    });
+</script>
+</html>
